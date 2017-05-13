@@ -1,0 +1,12 @@
+import http.client
+import json
+
+if __name__ == "__main__":
+    conn = http.client.HTTPConnection("www.kanyerest.xyz")
+    conn.request("GET", "/api/all")
+
+    # This is a json file containing an object for each Kanye song with keys album, title, lyrics
+    r1 = conn.getresponse()
+    decoder = json.JSONDecoder(r1)
+    songs = decoder.decode(r1)
+    conn.close()
