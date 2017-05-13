@@ -14,8 +14,8 @@ def toWordDict(songObject, output):
         elif char.isspace():
             word = "".join(my_buffer)
             titles = output.setdefault(word, [])
-            if songObject["album"] not in titles:
-                titles.append(songObject["album"])
+            if songObject["title"] not in titles:
+                titles.append(songObject["title"])
             my_buffer.clear()
 
 if __name__ == "__main__":
